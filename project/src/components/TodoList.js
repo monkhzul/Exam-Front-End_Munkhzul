@@ -21,14 +21,16 @@ function TodoList(props) {
   }, [render]);
 
   const addList = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+  
     fetch('http://3.0.103.3:3003/api/createList', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: e.target[0].value
+        name: e.target[0].value,
+        
       })
     })
     .then((res)=>res.json())
